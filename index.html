@@ -13,6 +13,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: #f7f9fc;
@@ -23,7 +27,7 @@
     header {
       background: #111827;
       color: white;
-      padding: 18px 20px;
+      padding: 16px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -35,19 +39,34 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 15px;
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: bold;
       letter-spacing: 1px;
+      white-space: nowrap;
     }
 
-    .nav a {
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .nav button {
+      background: transparent;
+      border: none;
       color: white;
-      text-decoration: none;
-      margin-left: 18px;
+      padding: 8px 10px;
+      cursor: pointer;
       font-size: 14px;
+    }
+
+    .nav button:hover {
+      color: #93c5fd;
     }
 
     .hero {
@@ -63,21 +82,22 @@
     }
 
     .hero p {
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
       font-size: 18px;
-      opacity: 0.95;
     }
 
-    .button {
+    .main-button {
       display: inline-block;
       margin-top: 28px;
       padding: 13px 25px;
       background: white;
       color: #1d4ed8;
+      border: none;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
     }
 
     section {
@@ -103,6 +123,11 @@
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
     }
 
     .card h3 {
@@ -110,10 +135,27 @@
       color: #1d4ed8;
     }
 
+    .card button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 7px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .card button:hover {
+      background: #1d4ed8;
+    }
+
     .join {
       background: #eaf1ff;
       text-align: center;
       border-radius: 15px;
+      padding: 50px 25px;
     }
 
     footer {
@@ -123,18 +165,63 @@
       padding: 30px 20px;
     }
 
+    /* Page panels */
+
+    .page {
+      display: none;
+      min-height: 65vh;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .back-button {
+      display: block;
+      margin: 0 auto 30px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 7px;
+      background: #111827;
+      color: white;
+      cursor: pointer;
+    }
+
+    .class-title {
+      text-align: center;
+      font-size: 36px;
+      color: #1d4ed8;
+      margin-bottom: 30px;
+    }
+
+    .subject {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .subject h3 {
+      color: #1d4ed8;
+      margin-bottom: 10px;
+    }
+
     @media (max-width: 700px) {
+
       .nav {
         flex-direction: column;
-        gap: 10px;
       }
 
-      .nav a {
-        margin: 0 7px;
+      .nav-links {
+        width: 100%;
       }
 
       .hero h1 {
         font-size: 36px;
+      }
+
+      .hero {
+        padding: 70px 20px;
       }
     }
   </style>
@@ -142,134 +229,338 @@
 
 <body>
 
-  <header>
-    <div class="nav">
-      <div class="logo">VANTARA EDUCATION</div>
+<header>
 
-      <div>
-        <a href="#home">Home</a>
-        <a href="#learning">Learning</a>
-        <a href="#classes">Classes</a>
-        <a href="#join">Join</a>
-      </div>
+  <div class="nav">
+
+    <div class="logo">
+      VANTARA EDUCATION
     </div>
-  </header>
 
-  <main>
+    <div class="nav-links">
 
-    <section class="hero" id="home">
-      <h1>VANTARA EDUCATION</h1>
+      <button onclick="showPage('home')">
+        Home
+      </button>
+
+      <button onclick="showPage('learning')">
+        Learning
+      </button>
+
+      <button onclick="showPage('classes')">
+        Classes
+      </button>
+
+      <button onclick="showPage('join')">
+        Join VANTARA
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- HOME -->
+
+<div id="home" class="page active">
+
+  <section class="hero">
+
+    <h1>VANTARA EDUCATION</h1>
+
+    <p>
+      Learn. Explore. Build. Achieve.
+      A learning platform for students to develop
+      knowledge, skills, creativity and confidence.
+    </p>
+
+    <button
+      class="main-button"
+      onclick="showPage('classes')">
+      Explore Classes
+    </button>
+
+  </section>
+
+
+  <section>
+
+    <h2 class="section-title">
+      Learn With VANTARA
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>📚 Learning Hub</h3>
+        <p>
+          Structured learning resources to help
+          students understand concepts clearly.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🤖 AI & Digital Skills</h3>
+        <p>
+          Explore modern technology, AI and
+          useful digital skills.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📝 Practice Zone</h3>
+        <p>
+          Practice questions and activities
+          to strengthen learning.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🛠️ Skill Labs</h3>
+        <p>
+          Learn through activities, projects
+          and practical exploration.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- LEARNING -->
+
+<div id="learning" class="page">
+
+  <section>
+
+    <h2 class="section-title">
+      Learning Hub
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>📖 Concept Learning</h3>
+        <p>
+          Understand important concepts step by step.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📝 Practice</h3>
+        <p>
+          Strengthen your understanding through practice.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>💡 Projects</h3>
+        <p>
+          Turn ideas into practical projects.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🚀 Skills</h3>
+        <p>
+          Develop useful skills for the future.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- CLASSES -->
+
+<div id="classes" class="page">
+
+  <section>
+
+    <h2 class="section-title">
+      Classes 6–12
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Class 6</h3>
+        <p>Explore Class 6 learning.</p>
+        <button onclick="openClass(6)">Open Class 6</button>
+      </div>
+
+      <div class="card">
+        <h3>Class 7</h3>
+        <p>Explore Class 7 learning.</p>
+        <button onclick="openClass(7)">Open Class 7</button>
+      </div>
+
+      <div class="card">
+        <h3>Class 8</h3>
+        <p>Explore Class 8 learning.</p>
+        <button onclick="openClass(8)">Open Class 8</button>
+      </div>
+
+      <div class="card">
+        <h3>Class 9</h3>
+        <p>Explore Class 9 learning.</p>
+        <button onclick="openClass(9)">Open Class 9</button>
+      </div>
+
+      <div class="card">
+        <h3>Class 10</h3>
+        <p>Explore Class 10 learning.</p>
+        <button onclick="openClass(10)">Open Class 10</button>
+      </div>
+
+      <div class="card">
+        <h3>Class 11</h3>
+        <p>Explore Class 11 learning.</p>
+        <button onclick="openClass(11)">Open Class 11</button>
+      </div>
+
+      <div class="card">
+        <h3>Class 12</h3>
+        <p>Explore Class 12 learning.</p>
+        <button onclick="openClass(12)">Open Class 12</button>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- CLASS DETAILS -->
+
+<div id="class-details" class="page">
+
+  <section>
+
+    <button
+      class="back-button"
+      onclick="showPage('classes')">
+      ← Back to Classes
+    </button>
+
+    <h2 id="class-title" class="class-title"></h2>
+
+    <div class="cards">
+
+      <div class="subject">
+        <h3>📐 Mathematics</h3>
+        <p>Mathematics resources will be added here.</p>
+      </div>
+
+      <div class="subject">
+        <h3>🔬 Science</h3>
+        <p>Science resources will be added here.</p>
+      </div>
+
+      <div class="subject">
+        <h3>🌍 Social Science</h3>
+        <p>Social Science resources will be added here.</p>
+      </div>
+
+      <div class="subject">
+        <h3>📚 English</h3>
+        <p>English resources will be added here.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- JOIN -->
+
+<div id="join" class="page">
+
+  <section>
+
+    <div class="join">
+
+      <h2 class="section-title">
+        Join VANTARA
+      </h2>
 
       <p>
-        Learn. Explore. Build. Achieve.
-        A learning platform for students to develop knowledge,
-        skills, creativity and confidence.
+        VANTARA EDUCATION is currently free for students.
       </p>
 
-      <a class="button" href="#classes">Explore Learning</a>
-    </section>
+      <p style="margin-top:10px;">
+        Registration and email updates will be added
+        in the next stage.
+      </p>
 
-    <section id="learning">
-      <h2 class="section-title">Learning at VANTARA</h2>
+      <button
+        class="main-button"
+        onclick="alert('Registration system coming next!')">
+        Register
+      </button>
 
-      <div class="cards">
+    </div>
 
-        <div class="card">
-          <h3>📚 Learning Hub</h3>
-          <p>
-            Structured learning resources designed to help students
-            understand concepts clearly.
-          </p>
-        </div>
+  </section>
 
-        <div class="card">
-          <h3>🤖 AI & Digital Skills</h3>
-          <p>
-            Explore modern technology, AI and useful digital skills.
-          </p>
-        </div>
+</div>
 
-        <div class="card">
-          <h3>📝 Practice Zone</h3>
-          <p>
-            Practice questions and activities to strengthen learning.
-          </p>
-        </div>
 
-        <div class="card">
-          <h3>🛠️ Skill Labs</h3>
-          <p>
-            Learn through activities, projects and practical exploration.
-          </p>
-        </div>
+<footer>
 
-      </div>
-    </section>
+  <p>© 2026 VANTARA EDUCATION</p>
 
-    <section id="classes">
-      <h2 class="section-title">Classes 6–12</h2>
+  <p>
+    Learn. Explore. Build. Achieve.
+  </p>
 
-      <div class="cards">
+</footer>
 
-        <div class="card">
-          <h3>Class 6</h3>
-          <p>Learning resources for Class 6 students.</p>
-        </div>
 
-        <div class="card">
-          <h3>Class 7</h3>
-          <p>Learning resources for Class 7 students.</p>
-        </div>
+<script>
 
-        <div class="card">
-          <h3>Class 8</h3>
-          <p>Learning resources for Class 8 students.</p>
-        </div>
+function showPage(pageId) {
 
-        <div class="card">
-          <h3>Class 9</h3>
-          <p>Learning resources for Class 9 students.</p>
-        </div>
+  const pages = document.querySelectorAll(".page");
 
-        <div class="card">
-          <h3>Class 10</h3>
-          <p>Learning resources for Class 10 students.</p>
-        </div>
+  pages.forEach(function(page) {
+    page.classList.remove("active");
+  });
 
-        <div class="card">
-          <h3>Class 11</h3>
-          <p>Learning resources for Class 11 students.</p>
-        </div>
+  const selectedPage =
+    document.getElementById(pageId);
 
-        <div class="card">
-          <h3>Class 12</h3>
-          <p>Learning resources for Class 12 students.</p>
-        </div>
+  if (selectedPage) {
+    selectedPage.classList.add("active");
+  }
 
-      </div>
-    </section>
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
 
-    <section id="join">
-      <div class="join">
-        <h2 class="section-title">Join VANTARA</h2>
 
-        <p>
-          VANTARA EDUCATION is currently free for students.
-          Register to receive important VANTARA updates and announcements.
-        </p>
+function openClass(classNumber) {
 
-        <a class="button" href="#">
-          Join VANTARA
-        </a>
-      </div>
-    </section>
+  document.getElementById("class-title").textContent =
+    "Class " + classNumber;
 
-  </main>
+  showPage("class-details");
+}
 
-  <footer>
-    <p>© 2026 VANTARA EDUCATION</p>
-    <p>Learn. Explore. Build. Achieve.</p>
-  </footer>
+</script>
 
 </body>
 </html>
