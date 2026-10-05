@@ -2,12 +2,19 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>VANTARA EDUCATION</title>
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
   box-sizing: border-box;
@@ -26,151 +33,504 @@ body {
   line-height: 1.6;
 }
 
+
+/* =====================================================
+   STARTING SCREEN
+===================================================== */
+
+#welcomeScreen {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #10263a 0%,
+      #08111c 40%,
+      #05080f 75%
+    );
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+  overflow-y: auto;
+}
+
+.welcome-box {
+
+  width: 100%;
+
+  max-width: 560px;
+
+  text-align: center;
+
+  padding: 45px 25px;
+
+  border: 1px solid #263648;
+
+  border-radius: 20px;
+
+  background: rgba(7, 13, 22, 0.92);
+
+  box-shadow:
+    0 20px 70px rgba(0,0,0,0.45);
+}
+
+.welcome-logo {
+
+  color: #7dd3fc;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 18px;
+}
+
+.welcome-box h1 {
+
+  font-size: 46px;
+
+  line-height: 1.05;
+
+  margin-bottom: 12px;
+}
+
+.welcome-box h1 span {
+
+  color: #7dd3fc;
+}
+
+.welcome-tagline {
+
+  color: #c4cfdb;
+
+  font-size: 18px;
+
+  margin-bottom: 8px;
+}
+
+.welcome-description {
+
+  color: #7f8da0;
+
+  font-size: 14px;
+
+  max-width: 430px;
+
+  margin: 0 auto 30px;
+}
+
+
+/* Welcome feature cards */
+
+.welcome-features {
+
+  display: grid;
+
+  grid-template-columns:
+  repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-bottom: 28px;
+}
+
+.welcome-feature {
+
+  background: #0b1420;
+
+  border: 1px solid #1d2b3b;
+
+  border-radius: 10px;
+
+  padding: 14px 7px;
+
+  color: #aebbc9;
+
+  font-size: 12px;
+}
+
+.welcome-feature-icon {
+
+  font-size: 24px;
+
+  display: block;
+
+  margin-bottom: 5px;
+}
+
+
+/* Email */
+
+.email-label {
+
+  display: block;
+
+  text-align: left;
+
+  max-width: 430px;
+
+  margin: 0 auto 7px;
+
+  color: #b8c4d1;
+
+  font-size: 13px;
+}
+
+.email-input {
+
+  width: 100%;
+
+  max-width: 430px;
+
+  padding: 14px 15px;
+
+  background: #080f18;
+
+  color: white;
+
+  border: 1px solid #2a3b4f;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  margin-bottom: 12px;
+}
+
+.email-input:focus {
+
+  border-color: #7dd3fc;
+
+  box-shadow:
+    0 0 0 2px rgba(125,211,252,0.08);
+}
+
+
+/* Buttons */
+
+.welcome-button {
+
+  width: 100%;
+
+  max-width: 430px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #05080f;
+
+  font-weight: bold;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.welcome-button:hover {
+
+  background: #dff6ff;
+}
+
+.skip-button {
+
+  margin-top: 12px;
+
+  background: transparent;
+
+  border: none;
+
+  color: #7f8da0;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+.skip-button:hover {
+
+  color: #7dd3fc;
+}
+
+.privacy-note {
+
+  margin-top: 18px;
+
+  color: #5f6e7e;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
 header {
+
   background: #05080f;
+
   border-bottom: 1px solid #182231;
+
   position: sticky;
+
   top: 0;
+
   z-index: 1000;
+
   padding: 14px 20px;
 }
 
 .nav {
+
   max-width: 1250px;
+
   margin: auto;
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   gap: 15px;
 }
 
 .logo {
+
   font-size: 20px;
+
   font-weight: bold;
+
   letter-spacing: 1px;
+
   color: #f5f7fb;
+
   white-space: nowrap;
 }
 
 .nav-links {
+
   display: flex;
+
   flex-wrap: wrap;
+
   justify-content: center;
+
   gap: 3px;
 }
 
 .nav-links button {
+
   background: transparent;
+
   border: none;
+
   color: #aab5c5;
+
   padding: 8px 10px;
+
   font-size: 13px;
+
   cursor: pointer;
+
   border-radius: 6px;
 }
 
 .nav-links button:hover {
+
   color: #7dd3fc;
+
   background: #0b121d;
 }
 
+
+/* =====================================================
+   PAGE SYSTEM
+===================================================== */
+
 .page {
+
   display: none;
+
   min-height: 70vh;
+
   background: #05080f;
 }
 
 .page.active {
+
   display: block;
 }
 
 section {
+
   max-width: 1200px;
+
   margin: auto;
+
   padding: 65px 20px;
 }
 
+
+/* =====================================================
+   HERO
+===================================================== */
+
 .hero {
+
   background: #05080f;
+
   border-bottom: 1px solid #121a26;
+
   padding: 100px 40px;
+
   text-align: left;
 }
 
 .hero-content {
+
   max-width: 1200px;
+
   margin: auto;
+
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+
+  grid-template-columns:
+  1.2fr 0.8fr;
+
   gap: 50px;
+
   align-items: center;
 }
 
 .hero-small {
+
   color: #7dd3fc;
+
   font-size: 11px;
+
   letter-spacing: 2px;
+
   font-weight: bold;
+
   margin-bottom: 15px;
 }
 
 .hero h1 {
+
   font-size: 54px;
+
   line-height: 1.05;
+
   margin-bottom: 20px;
 }
 
 .hero h1 span {
+
   color: #7dd3fc;
 }
 
 .hero p {
+
   max-width: 650px;
+
   color: #9aa6b7;
+
   font-size: 18px;
 }
 
 .hero-buttons {
+
   display: flex;
+
   gap: 12px;
+
   margin-top: 28px;
+
   flex-wrap: wrap;
 }
 
 .main-button {
+
   padding: 13px 24px;
+
   border: 1px solid #ffffff;
+
   border-radius: 8px;
+
   background: #ffffff;
+
   color: #070b12;
+
   font-weight: bold;
+
   font-size: 14px;
+
   cursor: pointer;
 }
 
 .main-button:hover {
+
   background: #dff6ff;
 }
 
 .secondary-button {
+
   padding: 13px 24px;
+
   border: 1px solid #263648;
+
   border-radius: 8px;
+
   background: #070c14;
+
   color: #dce5ef;
+
   font-weight: bold;
+
   font-size: 14px;
+
   cursor: pointer;
 }
 
 .secondary-button:hover {
+
   border-color: #7dd3fc;
+
   color: #7dd3fc;
 }
 
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
 .hero-visual {
+
   min-height: 300px;
+
   border: 1px solid #263648;
+
   border-radius: 18px;
 
   background:
@@ -184,215 +544,382 @@ section {
   position: relative;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 }
 
 .hero-visual-title {
+
   position: absolute;
+
   top: 22px;
+
   color: #7dd3fc;
+
   font-size: 10px;
+
   letter-spacing: 2px;
 }
 
 .hero-pills {
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 25px;
 }
 
 .hero-pill {
+
   background: #0c1622;
+
   border: 1px solid #263648;
+
   padding: 13px 18px;
+
   border-radius: 10px;
+
   color: #dce5ef;
+
   font-size: 14px;
 }
 
+
+/* =====================================================
+   TITLES
+===================================================== */
+
 .title {
+
   text-align: center;
+
   font-size: 34px;
+
   margin-bottom: 15px;
 }
 
 .subtitle {
+
   text-align: center;
+
   max-width: 750px;
+
   margin: 0 auto 40px;
+
   color: #8995a7;
 }
 
 .section-label {
+
   color: #7dd3fc;
+
   font-size: 11px;
+
   letter-spacing: 2px;
+
   font-weight: bold;
+
   margin-bottom: 8px;
 }
 
+
+/* =====================================================
+   CARDS
+===================================================== */
+
 .cards {
+
   display: grid;
+
   grid-template-columns:
   repeat(auto-fit, minmax(230px, 1fr));
+
   gap: 18px;
 }
 
 .card {
+
   background: #0a111b;
+
   border: 1px solid #1b2737;
+
   border-radius: 12px;
+
   padding: 25px;
+
   transition: 0.2s;
 }
 
 .card:hover {
+
   transform: translateY(-3px);
+
   background: #0c1420;
+
   border-color: #31506b;
 }
 
 .card h3 {
+
   color: #f1f5f9;
+
   font-size: 19px;
+
   margin-bottom: 10px;
 }
 
 .card p {
+
   color: #8995a7;
+
   font-size: 14px;
 }
 
 .card button {
+
   width: 100%;
+
   margin-top: 18px;
+
   padding: 11px;
+
   border: 1px solid #263648;
+
   border-radius: 7px;
+
   background: #0c1622;
+
   color: #7dd3fc;
+
   font-weight: bold;
+
   cursor: pointer;
 }
 
 .card button:hover {
+
   background: #102033;
+
   border-color: #4c7898;
 }
 
 .icon {
+
   font-size: 32px;
+
   margin-bottom: 10px;
 }
 
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
 .back {
+
   margin-bottom: 25px;
+
   padding: 9px 17px;
+
   border: 1px solid #263648;
+
   border-radius: 7px;
+
   background: #0a111b;
+
   color: #b9c4d2;
+
   cursor: pointer;
 }
 
 .back:hover {
+
   background: #101a27;
+
   color: #7dd3fc;
 }
 
+
+/* =====================================================
+   PAGE HEADINGS
+===================================================== */
+
 .page-heading {
+
   color: #f5f7fb;
+
   font-size: 38px;
+
   margin-bottom: 12px;
 }
 
 .page-description {
+
   max-width: 750px;
+
   margin-bottom: 35px;
+
   color: #8995a7;
 }
 
+
+/* =====================================================
+   CLASS
+===================================================== */
+
 .class-card {
+
   text-align: left;
 }
 
 .class-number {
+
   font-size: 32px;
+
   font-weight: bold;
+
   color: #7dd3fc;
+
   margin-bottom: 5px;
 }
 
+
+/* =====================================================
+   JOIN
+===================================================== */
+
 .join-box {
+
   background: #0a111b;
+
   border: 1px solid #263648;
+
   border-radius: 16px;
+
   padding: 55px 25px;
+
   text-align: center;
 }
 
 .join-box p {
+
   color: #9aa6b7;
+
   max-width: 650px;
+
   margin: 0 auto 10px;
 }
 
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
 .search-section {
+
   border-bottom: 1px solid #121a26;
+
   border-top: 1px solid #121a26;
 }
 
 .search-box {
+
   max-width: 700px;
+
   margin: auto;
+
   display: flex;
 }
 
 .search-box input {
+
   flex: 1;
+
   padding: 15px;
+
   background: #0a111b;
+
   border: 1px solid #263648;
+
   border-radius: 8px 0 0 8px;
+
   color: white;
+
   outline: none;
 }
 
 .search-box input:focus {
+
   border-color: #7dd3fc;
 }
 
 .search-box button {
+
   padding: 0 20px;
+
   border: none;
+
   background: #ffffff;
+
   color: #070b12;
+
   border-radius: 0 8px 8px 0;
+
   cursor: pointer;
+
   font-weight: bold;
 }
 
+
+/* =====================================================
+   NOTICE
+===================================================== */
+
 .notice {
+
   background: #0a111b;
+
   border: 1px solid #1b2737;
+
   border-left: 4px solid #7dd3fc;
+
   padding: 20px;
+
   margin-bottom: 25px;
+
   border-radius: 8px;
 }
 
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
 footer {
+
   background: #070b12;
+
   color: #8995a7;
+
   text-align: center;
+
   padding: 32px 20px;
+
   border-top: 1px solid #182231;
 }
 
 footer p {
+
   margin: 5px;
 }
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 750px) {
 
@@ -459,12 +986,145 @@ footer p {
     padding: 13px;
     border-radius: 8px;
   }
+
+  .welcome-box {
+    padding: 35px 18px;
+  }
+
+  .welcome-box h1 {
+    font-size: 38px;
+  }
+
+  .welcome-features {
+    gap: 7px;
+  }
+
 }
 
+
+/* =====================================================
+   END OF PART 1
+===================================================== */
+
 </style>
+
 </head>
 
 <body>
+
+
+<!-- =====================================================
+     STARTING SIGN-IN / WELCOME SCREEN
+===================================================== -->
+
+<div id="welcomeScreen">
+
+<div class="welcome-box">
+
+<div class="welcome-logo">
+VANTARA EDUCATION
+</div>
+
+<h1>
+Learn.
+<span>Grow.</span>
+<br>
+Achieve.
+</h1>
+
+<p class="welcome-tagline">
+Education Without Limits.
+</p>
+
+<p class="welcome-description">
+A learning platform for students to learn,
+explore, create and develop future-ready skills.
+</p>
+
+
+<div class="welcome-features">
+
+<div class="welcome-feature">
+
+<span class="welcome-feature-icon">
+📚
+</span>
+
+Learning
+
+</div>
+
+
+<div class="welcome-feature">
+
+<span class="welcome-feature-icon">
+🏆
+</span>
+
+Achieve
+
+</div>
+
+
+<div class="welcome-feature">
+
+<span class="welcome-feature-icon">
+💡
+</span>
+
+Skills
+
+</div>
+
+</div>
+
+
+<label class="email-label">
+Email Address
+</label>
+
+<input
+id="welcomeEmail"
+class="email-input"
+type="email"
+placeholder="Enter your email"
+autocomplete="email"
+>
+
+
+<button
+class="welcome-button"
+onclick="continueToVantara()">
+
+Continue to VANTARA
+
+</button>
+
+
+<button
+class="skip-button"
+onclick="skipWelcome()">
+
+Skip for now
+
+</button>
+
+
+<p class="privacy-note">
+
+Your email will be used for VANTARA updates
+after the registration system is connected.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN HEADER
+===================================================== -->
 
 <header>
 
@@ -473,6 +1133,7 @@ footer p {
 <div class="logo">
 VANTARA EDUCATION
 </div>
+
 
 <div class="nav-links">
 
@@ -510,11 +1171,17 @@ Join VANTARA
 
 </header>
 
+
+<!-- =====================================================
+     HOME PAGE
+===================================================== -->
+
 <div id="home" class="page active">
 
 <section class="hero">
 
 <div class="hero-content">
+
 
 <div>
 
@@ -535,29 +1202,37 @@ AI, digital skills, research, projects
 and future-ready learning.
 </p>
 
+
 <div class="hero-buttons">
 
 <button
 class="main-button"
 onclick="showPage('learning')">
+
 Explore Learning
+
 </button>
+
 
 <button
 class="secondary-button"
 onclick="showPage('classes')">
+
 Explore Classes
+
 </button>
 
 </div>
 
 </div>
+
 
 <div class="hero-visual">
 
 <div class="hero-visual-title">
 EDUCATION WITHOUT LIMITS
 </div>
+
 
 <div class="hero-pills">
 
@@ -581,9 +1256,13 @@ EDUCATION WITHOUT LIMITS
 
 </div>
 
+
 </div>
 
 </section>
+
+
+<!-- SEARCH -->
 
 <section class="search-section">
 
@@ -594,6 +1273,7 @@ GLOBAL SEARCH
 <h2 style="margin-bottom:20px;">
 Find anything in VANTARA
 </h2>
+
 
 <div class="search-box">
 
@@ -611,6 +1291,9 @@ Search
 
 </section>
 
+
+<!-- LEARNING HUB -->
+
 <section>
 
 <div class="section-label">
@@ -621,7 +1304,8 @@ Search
 Your central learning space
 </h2>
 
-<p class="subtitle"
+<p
+class="subtitle"
 style="text-align:left;margin-left:0;">
 
 Explore class-wise learning,
@@ -629,7 +1313,9 @@ subjects, chapters and supporting resources.
 
 </p>
 
+
 <div class="cards">
+
 
 <div class="card">
 
@@ -651,6 +1337,7 @@ Open Classes →
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">
@@ -670,6 +1357,7 @@ Explore Subjects →
 </button>
 
 </div>
+
 
 <div class="card">
 
@@ -691,6 +1379,7 @@ Start Practice →
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">
@@ -711,20 +1400,30 @@ Open Library →
 
 </div>
 
+
 </div>
 
 </section>
 
 </div>
 
+
+<!-- =====================================================
+     LEARNING HUB
+===================================================== -->
+
 <div id="learning" class="page">
 
 <section>
 
-<button class="back"
+<button
+class="back"
 onclick="showPage('home')">
+
 ← Back to Home
+
 </button>
+
 
 <div class="section-label">
 📚 LEARNING HUB
@@ -739,7 +1438,9 @@ A central place for concept learning,
 study resources and academic development.
 </p>
 
+
 <div class="cards">
+
 
 <div class="card">
 
@@ -762,6 +1463,7 @@ Explore Concepts
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">
@@ -781,6 +1483,7 @@ Explore Resources
 </button>
 
 </div>
+
 
 <div class="card">
 
@@ -802,6 +1505,7 @@ Explore Activities
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">
@@ -822,20 +1526,30 @@ Explore Goals
 
 </div>
 
+
 </div>
 
 </section>
 
 </div>
 
+
+<!-- =====================================================
+     CLASSES
+===================================================== -->
+
 <div id="classes" class="page">
 
 <section>
 
-<button class="back"
+<button
+class="back"
 onclick="showPage('home')">
+
 ← Back to Home
+
 </button>
+
 
 <div class="section-label">
 🎓 CLASSES
@@ -849,70 +1563,156 @@ Classes 6–12
 Choose your class to explore subjects and learning resources.
 </p>
 
+
 <div class="cards">
 
+
 <div class="card class-card">
-<div class="class-number">6</div>
-<h3>Class 6</h3>
-<p>Explore Class 6 learning.</p>
+
+<div class="class-number">
+6
+</div>
+
+<h3>
+Class 6
+</h3>
+
+<p>
+Explore Class 6 learning.
+</p>
+
 <button onclick="openClass(6)">
 Open Class 6
 </button>
+
 </div>
 
+
 <div class="card class-card">
-<div class="class-number">7</div>
-<h3>Class 7</h3>
-<p>Explore Class 7 learning.</p>
+
+<div class="class-number">
+7
+</div>
+
+<h3>
+Class 7
+</h3>
+
+<p>
+Explore Class 7 learning.
+</p>
+
 <button onclick="openClass(7)">
 Open Class 7
 </button>
+
 </div>
 
+
 <div class="card class-card">
-<div class="class-number">8</div>
-<h3>Class 8</h3>
-<p>Explore Class 8 learning.</p>
+
+<div class="class-number">
+8
+</div>
+
+<h3>
+Class 8
+</h3>
+
+<p>
+Explore Class 8 learning.
+</p>
+
 <button onclick="openClass(8)">
 Open Class 8
 </button>
+
 </div>
 
+
 <div class="card class-card">
-<div class="class-number">9</div>
-<h3>Class 9</h3>
-<p>Explore Class 9 learning.</p>
+
+<div class="class-number">
+9
+</div>
+
+<h3>
+Class 9
+</h3>
+
+<p>
+Explore Class 9 learning.
+</p>
+
 <button onclick="openClass(9)">
 Open Class 9
 </button>
+
 </div>
 
+
 <div class="card class-card">
-<div class="class-number">10</div>
-<h3>Class 10</h3>
-<p>Explore Class 10 learning.</p>
+
+<div class="class-number">
+10
+</div>
+
+<h3>
+Class 10
+</h3>
+
+<p>
+Explore Class 10 learning.
+</p>
+
 <button onclick="openClass(10)">
 Open Class 10
 </button>
+
 </div>
 
+
 <div class="card class-card">
-<div class="class-number">11</div>
-<h3>Class 11</h3>
-<p>Explore Class 11 learning.</p>
+
+<div class="class-number">
+11
+</div>
+
+<h3>
+Class 11
+</h3>
+
+<p>
+Explore Class 11 learning.
+</p>
+
 <button onclick="openClass(11)">
 Open Class 11
 </button>
+
 </div>
 
+
 <div class="card class-card">
-<div class="class-number">12</div>
-<h3>Class 12</h3>
-<p>Explore Class 12 learning.</p>
+
+<div class="class-number">
+12
+</div>
+
+<h3>
+Class 12
+</h3>
+
+<p>
+Explore Class 12 learning.
+</p>
+
 <button onclick="openClass(12)">
 Open Class 12
 </button>
+
 </div>
+
 
 </div>
 
@@ -920,188 +1720,186 @@ Open Class 12
 
 </div>
 
+
+<!-- =====================================================
+     SUBJECTS
+===================================================== -->
+
 <div id="subjects" class="page">
 
 <section>
 
-<button class="back"
+<button
+class="back"
 onclick="showPage('classes')">
+
 ← Back to Classes
+
 </button>
+
 
 <div class="section-label">
 📖 SUBJECTS
 </div>
 
-<h2 id="classHeading" class="page-heading">
+<h2
+id="classHeading"
+class="page-heading">
+
 Class
+
 </h2>
 
 <p class="page-description">
 Choose a subject to continue.
 </p>
 
+
 <div class="cards">
 
+
 <div class="card">
-<div class="icon">📐</div>
-<h3>Mathematics</h3>
-<p>Mathematics chapters, notes and practice.</p>
+
+<div class="icon">
+📐
+</div>
+
+<h3>
+Mathematics
+</h3>
+
+<p>
+Mathematics chapters, notes and practice.
+</p>
+
 <button onclick="openSubject('Mathematics')">
 Open Mathematics
 </button>
+
 </div>
 
-<div class="card">
-<div class="icon">🔬</div>
-<h3>Science</h3>
-<p>Science concepts, notes and activities.</p>
-<button onclick="openSubject('Science')">
-Open Science
+
+
+<!-- SUBJECT PAGE -->
+
+<section id="subjects" class="page">
+
+<button class="back-button" onclick="showPage('classes')">
+← Back to Classes
 </button>
+
+<div class="page-title">
+<h2 id="subjectPageTitle">Subjects</h2>
+<p>Select a subject to explore learning resources.</p>
 </div>
 
-<div class="card">
-<div class="icon">🌍</div>
+<div class="card-grid">
+
+<div class="info-card" onclick="comingSoon('Mathematics')">
+<div class="card-icon">📐</div>
+<h3>Mathematics</h3>
+<p>Concepts, examples, practice and problem solving.</p>
+</div>
+
+<div class="info-card" onclick="comingSoon('Science')">
+<div class="card-icon">🔬</div>
+<h3>Science</h3>
+<p>Explore scientific concepts and real-world applications.</p>
+</div>
+
+<div class="info-card" onclick="comingSoon('Social Science')">
+<div class="card-icon">🌍</div>
 <h3>Social Science</h3>
 <p>History, Geography, Civics and Economics.</p>
-<button onclick="openSubject('Social Science')">
-Open Social Science
-</button>
 </div>
 
-<div class="card">
-<div class="icon">📚</div>
+<div class="info-card" onclick="comingSoon('English')">
+<div class="card-icon">📖</div>
 <h3>English</h3>
-<p>English grammar, literature and language.</p>
-<button onclick="openSubject('English')">
-Open English
-</button>
+<p>Grammar, literature, writing and communication.</p>
 </div>
 
-<div class="card">
-<div class="icon">🪔</div>
+<div class="info-card" onclick="comingSoon('Hindi')">
+<div class="card-icon">📝</div>
 <h3>Hindi</h3>
-<p>Hindi language and literature.</p>
-<button onclick="openSubject('Hindi')">
-Open Hindi
-</button>
+<p>Language, literature and writing skills.</p>
 </div>
 
-<div class="card">
-<div class="icon">💻</div>
+<div class="info-card" onclick="comingSoon('Computer')">
+<div class="card-icon">💻</div>
 <h3>Computer</h3>
-<p>Computer science and digital learning.</p>
-<button onclick="openSubject('Computer')">
-Open Computer
-</button>
+<p>Computing, technology and digital skills.</p>
 </div>
 
 </div>
 
 </section>
 
-</div>
-<div id="subjectPage" class="page">
 
-<section>
+<!-- AI LEARNING PAGE -->
 
-<button class="back"
-onclick="showPage('subjects')">
-← Back to Subjects
-</button>
+<section id="ai" class="page">
 
-<div class="section-label">
-📖 LEARNING
-</div>
+<div class="page-title">
 
-<h2 id="subjectHeading" class="page-heading">
-Subject
-</h2>
-
-<p class="page-description">
-Explore the available learning sections.
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">
-📖
-</div>
-
-<h3>
-Chapters
-</h3>
+<h2>AI Learning</h2>
 
 <p>
-Chapter-wise learning content.
+Explore Artificial Intelligence and future-ready digital skills.
 </p>
 
-<button onclick="comingSoon()">
-Open Chapters
-</button>
-
 </div>
 
-<div class="card">
+<div class="card-grid">
 
-<div class="icon">
-📝
-</div>
+<div class="info-card" onclick="comingSoon('AI Fundamentals')">
 
-<h3>
-Notes
-</h3>
+<div class="card-icon">🤖</div>
+
+<h3>AI Fundamentals</h3>
 
 <p>
-Detailed notes and explanations.
+Understand the basic concepts of Artificial Intelligence.
 </p>
 
-<button onclick="comingSoon()">
-Open Notes
-</button>
-
 </div>
 
-<div class="card">
 
-<div class="icon">
-✏️
-</div>
+<div class="info-card" onclick="comingSoon('Machine Learning')">
 
-<h3>
-Practice
-</h3>
+<div class="card-icon">🧠</div>
+
+<h3>Machine Learning</h3>
 
 <p>
-Practice questions and exercises.
+Learn how machines learn from data and patterns.
 </p>
 
-<button onclick="showPage('practice')">
-Open Practice
-</button>
-
 </div>
 
-<div class="card">
 
-<div class="icon">
-📂
-</div>
+<div class="info-card" onclick="comingSoon('Generative AI')">
 
-<h3>
-Resources
-</h3>
+<div class="card-icon">✨</div>
+
+<h3>Generative AI</h3>
 
 <p>
-Useful study resources and materials.
+Explore modern AI tools and creative applications.
 </p>
 
-<button onclick="showResources()">
-Open Resources
-</button>
+</div>
+
+
+<div class="info-card" onclick="comingSoon('AI Projects')">
+
+<div class="card-icon">🚀</div>
+
+<h3>AI Projects</h3>
+
+<p>
+Build practical projects and experiment with AI.
+</p>
 
 </div>
 
@@ -1109,223 +1907,71 @@ Open Resources
 
 </section>
 
-</div>
 
+<!-- PRACTICE PAGE -->
 
-<!-- ================= AI ================= -->
+<section id="practice" class="page">
 
-<div id="ai" class="page">
+<div class="page-title">
 
-<section>
-
-<button class="back"
-onclick="showPage('home')">
-← Back to Home
-</button>
-
-<div class="section-label">
-🤖 AI & DIGITAL SKILLS
-</div>
-
-<h2 class="page-heading">
-AI & Digital Skills
-</h2>
-
-<p class="page-description">
-Explore modern technology and develop useful digital skills.
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">
-🤖
-</div>
-
-<h3>
-Artificial Intelligence
-</h3>
+<h2>Practice Zone</h2>
 
 <p>
-Understand the basics of AI and how it is used.
+Practice concepts, improve accuracy and strengthen your skills.
 </p>
 
-<button onclick="comingSoon()">
-Explore AI
-</button>
-
 </div>
 
-<div class="card">
+<div class="card-grid">
 
-<div class="icon">
-💻
-</div>
+<div class="info-card" onclick="comingSoon('Practice Questions')">
 
-<h3>
-Digital Skills
-</h3>
+<div class="card-icon">✏️</div>
+
+<h3>Practice Questions</h3>
 
 <p>
-Develop important skills for the digital world.
+Topic-wise questions for regular practice.
 </p>
 
-<button onclick="comingSoon()">
-Explore Digital Skills
-</button>
-
 </div>
 
-<div class="card">
 
-<div class="icon">
-🧠
-</div>
+<div class="info-card" onclick="comingSoon('Revision')">
 
-<h3>
-AI Learning Tools
-</h3>
+<div class="card-icon">🔄</div>
+
+<h3>Revision</h3>
 
 <p>
-Discover useful AI-powered learning tools.
+Quick revision resources for important concepts.
 </p>
 
-<button onclick="comingSoon()">
-Explore Tools
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-🔐
-</div>
-
-<h3>
-Digital Awareness
-</h3>
-
-<p>
-Learn responsible and safe use of digital technology.
-</p>
-
-<button onclick="comingSoon()">
-Explore
-</button>
-
-</div>
-
-</div>
-
-</section>
-
 </div>
 
 
-<!-- ================= PRACTICE ================= -->
+<div class="info-card" onclick="comingSoon('Challenge Arena')">
 
-<div id="practice" class="page">
+<div class="card-icon">🏆</div>
 
-<section>
-
-<button class="back"
-onclick="showPage('home')">
-← Back to Home
-</button>
-
-<div class="section-label">
-🧠 PRACTICE
-</div>
-
-<h2 class="page-heading">
-Practice Zone
-</h2>
-
-<p class="page-description">
-Practice, revise and strengthen your understanding.
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">
-📝
-</div>
-
-<h3>
-Practice Questions
-</h3>
-
-<p>
-Subject-wise practice questions.
-</p>
-
-<button onclick="comingSoon()">
-Start Practice
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-🎯
-</div>
-
-<h3>
-Topic Practice
-</h3>
-
-<p>
-Practice individual topics and concepts.
-</p>
-
-<button onclick="comingSoon()">
-Explore Topics
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-🏆
-</div>
-
-<h3>
-Challenges
-</h3>
+<h3>Challenge Arena</h3>
 
 <p>
 Challenge yourself with interesting problems.
 </p>
 
-<button onclick="comingSoon()">
-Explore Challenges
-</button>
-
 </div>
 
-<div class="card">
 
-<div class="icon">
-🔄
-</div>
+<div class="info-card" onclick="comingSoon('Mock Tests')">
 
-<h3>
-Revision
-</h3>
+<div class="card-icon">📋</div>
+
+<h3>Mock Tests</h3>
 
 <p>
-Revise important concepts before examinations.
+Test your preparation and identify areas to improve.
 </p>
-
-<button onclick="comingSoon()">
-Start Revision
-</button>
 
 </div>
 
@@ -1333,111 +1979,71 @@ Start Revision
 
 </section>
 
-</div>
 
+<!-- SKILL LABS PAGE -->
 
-<!-- ================= SKILL LABS ================= -->
+<section id="skills" class="page">
 
-<div id="skills" class="page">
+<div class="page-title">
 
-<section>
-
-<button class="back"
-onclick="showPage('home')">
-← Back to Home
-</button>
-
-<div class="section-label">
-🛠️ SKILL LABS
-</div>
-
-<h2 class="page-heading">
-Skill Labs
-</h2>
-
-<p class="page-description">
-Learn by creating, exploring and doing.
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">
-🛠️
-</div>
-
-<h3>
-Projects
-</h3>
+<h2>Skill Labs</h2>
 
 <p>
-Build practical projects and turn ideas into reality.
+Develop skills beyond traditional classroom learning.
 </p>
 
-<button onclick="comingSoon()">
-Explore Projects
-</button>
-
 </div>
 
-<div class="card">
+<div class="card-grid">
 
-<div class="icon">
-💡
-</div>
+<div class="info-card" onclick="comingSoon('Communication Lab')">
 
-<h3>
-Innovation
-</h3>
+<div class="card-icon">🗣️</div>
+
+<h3>Communication Lab</h3>
 
 <p>
-Explore ideas and develop creative solutions.
+Improve communication, presentation and speaking skills.
 </p>
 
-<button onclick="comingSoon()">
-Explore Innovation
-</button>
-
 </div>
 
-<div class="card">
 
-<div class="icon">
-🔬
-</div>
+<div class="info-card" onclick="comingSoon('Research Program')">
 
-<h3>
-Experiments
-</h3>
+<div class="card-icon">🔎</div>
+
+<h3>Research Program</h3>
 
 <p>
-Learn through practical exploration.
+Learn how to explore questions and conduct research.
 </p>
 
-<button onclick="comingSoon()">
-Explore Experiments
-</button>
-
 </div>
 
-<div class="card">
 
-<div class="icon">
-🎨
-</div>
+<div class="info-card" onclick="comingSoon('Idea to Project')">
 
-<h3>
-Creative Skills
-</h3>
+<div class="card-icon">💡</div>
+
+<h3>Idea-to-Project</h3>
 
 <p>
-Develop creativity and practical abilities.
+Turn creative ideas into meaningful projects.
 </p>
 
-<button onclick="comingSoon()">
-Explore Skills
-</button>
+</div>
+
+
+<div class="info-card" onclick="comingSoon('Career Explorer')">
+
+<div class="card-icon">🧭</div>
+
+<h3>Career Explorer</h3>
+
+<p>
+Explore different careers and future opportunities.
+</p>
 
 </div>
 
@@ -1445,143 +2051,38 @@ Explore Skills
 
 </section>
 
-</div>
 
+<!-- RESOURCES PAGE -->
 
-<!-- ================= RESOURCES ================= -->
+<section id="resources" class="page">
 
-<div id="resources" class="page">
+<div class="page-title">
 
-<section>
-
-<button class="back"
-onclick="showPage('home')">
-← Back to Home
-</button>
-
-<div class="section-label">
-📚 RESOURCE LIBRARY
-</div>
-
-<h2 class="page-heading">
-Resource Library
-</h2>
-
-<p class="page-description">
-Notes, worksheets and useful learning material will be organised here.
-</p>
-
-<div class="notice">
-
-<strong>
-Resource Library is being prepared.
-</strong>
-
-<br>
-
-VANTARA resources will be added here as the platform develops.
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">
-📄
-</div>
-
-<h3>
-Notes
-</h3>
+<h2>Resource Library</h2>
 
 <p>
-Subject and chapter-wise notes.
+Notes, learning material, references and useful resources.
 </p>
 
-<button onclick="comingSoon()">
-Open Notes
-</button>
-
 </div>
 
-<div class="card">
+<div class="resource-box">
 
-<div class="icon">
-📝
+<div class="resource-icon">
+📚
 </div>
 
-<h3>
-Worksheets
-</h3>
+<h3>VANTARA Resource Library</h3>
 
 <p>
-Practice worksheets and activities.
-</p>
-
-<button onclick="comingSoon()">
-Open Worksheets
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-📁
-</div>
-
-<h3>
-Study Material
-</h3>
-
-<p>
-Organised study resources.
-</p>
-
-<button onclick="comingSoon()">
-Open Material
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-
-<!-- ================= JOIN ================= -->
-
-<div id="join" class="page">
-
-<section>
-
-<div class="join-box">
-
-<div class="section-label">
-VANTARA EDUCATION
-</div>
-
-<h2 class="title">
-Join VANTARA
-</h2>
-
-<p>
-VANTARA EDUCATION is currently free for students.
-</p>
-
-<p>
-Registration and email updates will be connected
-to the VANTARA system in the next stage.
+Learning resources will be added regularly.
 </p>
 
 <button
-class="main-button"
-onclick="comingSoon()">
+class="primary-button"
+onclick="comingSoon('Resource Library')">
 
-Register for VANTARA
+Explore Resources
 
 </button>
 
@@ -1589,216 +2090,680 @@ Register for VANTARA
 
 </section>
 
+
+<!-- SEARCH PAGE -->
+
+<section id="search" class="page">
+
+<div class="page-title">
+
+<h2>Global Search</h2>
+
+<p>
+Search across VANTARA learning content.
+</p>
+
+</div>
+
+<div class="search-box">
+
+<input
+id="globalSearchInput"
+type="text"
+placeholder="Search topics, subjects, classes..."
+oninput="performSearch()"
+>
+
+</div>
+
+<div id="searchResults">
+
+<div class="notice">
+
+Start typing to search VANTARA.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- JOIN VANTARA PAGE -->
+
+<section id="join" class="page">
+
+<div class="page-title">
+
+<h2>Join VANTARA</h2>
+
+<p>
+Stay connected with VANTARA EDUCATION and receive important updates.
+</p>
+
 </div>
 
 
-<!-- ================= FOOTER ================= -->
+<div class="join-box">
+
+<div class="join-icon">
+📩
+</div>
+
+<h3>Stay Updated</h3>
+
+<p>
+
+VANTARA EDUCATION is currently free for students.
+
+Join our learning community to receive future
+announcements, new resources and important updates.
+
+</p>
+
+
+<input
+id="joinName"
+type="text"
+placeholder="Student Name"
+class="form-input"
+>
+
+
+<select
+id="joinClass"
+class="form-input">
+
+<option value="">
+Select Class
+</option>
+
+<option>Class 6</option>
+<option>Class 7</option>
+<option>Class 8</option>
+<option>Class 9</option>
+<option>Class 10</option>
+<option>Class 11</option>
+<option>Class 12</option>
+
+</select>
+
+
+<input
+id="joinEmail"
+type="email"
+placeholder="Email Address"
+class="form-input"
+>
+
+
+<label class="consent-label">
+
+<input
+type="checkbox"
+id="joinConsent"
+>
+
+I agree to receive VANTARA EDUCATION updates.
+
+</label>
+
+
+<button
+class="primary-button"
+onclick="submitJoin()">
+
+Join VANTARA
+
+</button>
+
+
+<p class="small-note">
+
+If you are a minor and do not have your own email,
+use a parent/guardian's email with their permission.
+
+</p>
+
+
+<div
+id="joinMessage"
+class="join-message">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COMING SOON / NOTICE -->
+
+<section id="noticePage" class="page">
+
+<div class="notice-large">
+
+<div class="notice-large-icon">
+🚀
+</div>
+
+<h2 id="noticeTitle">
+Coming Soon
+</h2>
+
+<p id="noticeText">
+
+This VANTARA feature is currently being developed.
+
+</p>
+
+<button
+class="primary-button"
+onclick="showPage('home')">
+
+Return Home
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-<p>
-© 2026 VANTARA EDUCATION
-</p>
+<div class="footer-content">
+
+<div>
+
+<h3>VANTARA EDUCATION</h3>
 
 <p>
-Learn. Grow. Achieve.
+Education Without Limits.
 </p>
+
+</div>
+
+
+<div class="footer-links">
+
+<button onclick="showPage('home')">
+Home
+</button>
+
+<button onclick="showPage('learning')">
+Learning Hub
+</button>
+
+<button onclick="showPage('classes')">
+Classes
+</button>
+
+<button onclick="showPage('join')">
+Join VANTARA
+</button>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>
+© 2026 VANTARA EDUCATION. All rights reserved.
+</p>
+
+</div>
 
 </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-let selectedClass = "";
+/* =====================================================
+   WELCOME SCREEN
+===================================================== */
 
+function continueToVantara() {
 
-/* PAGE NAVIGATION */
+    const email =
+        document.getElementById("welcomeEmail").value.trim();
 
-function showPage(pageId) {
+    if (email === "") {
 
-  const pages =
-    document.querySelectorAll(".page");
+        alert(
+            "Please enter your email address or choose 'Skip for now'."
+        );
 
-  pages.forEach(function(page) {
-    page.classList.remove("active");
-  });
-
-  const selectedPage =
-    document.getElementById(pageId);
-
-  if (selectedPage) {
-    selectedPage.classList.add("active");
-  }
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
-
-
-/* CLASS */
-
-function openClass(classNumber) {
-
-  selectedClass = classNumber;
-
-  document.getElementById(
-    "classHeading"
-  ).textContent =
-    "Class " + classNumber;
-
-  showPage("subjects");
-}
-
-
-/* SUBJECT */
-
-function openSubject(subject) {
-
-  document.getElementById(
-    "subjectHeading"
-  ).textContent =
-    "Class " +
-    selectedClass +
-    " — " +
-    subject;
-
-  showPage("subjectPage");
-}
-
-
-/* RESOURCES */
-
-function showResources() {
-  showPage("resources");
-}
-
-
-/* SEARCH */
-
-function performSearch() {
-
-  const input =
-    document.getElementById("searchInput");
-
-  const query =
-    input.value.trim().toLowerCase();
-
-  if (!query) {
-
-    alert(
-      "Please enter something to search."
-    );
-
-    return;
-  }
-
-
-  if (
-    query.includes("class 6") ||
-    query.includes("class 7") ||
-    query.includes("class 8") ||
-    query.includes("class 9") ||
-    query.includes("class 10") ||
-    query.includes("class 11") ||
-    query.includes("class 12") ||
-    query.includes("class")
-  ) {
-
-    showPage("classes");
-    return;
-  }
-
-
-  if (
-    query.includes("ai") ||
-    query.includes("digital")
-  ) {
-
-    showPage("ai");
-    return;
-  }
-
-
-  if (
-    query.includes("practice") ||
-    query.includes("question")
-  ) {
-
-    showPage("practice");
-    return;
-  }
-
-
-  if (
-    query.includes("skill") ||
-    query.includes("project")
-  ) {
-
-    showPage("skills");
-    return;
-  }
-
-
-  if (
-    query.includes("resource") ||
-    query.includes("notes") ||
-    query.includes("worksheet")
-  ) {
-
-    showPage("resources");
-    return;
-  }
-
-
-  if (
-    query.includes("learning") ||
-    query.includes("study")
-  ) {
-
-    showPage("learning");
-    return;
-  }
-
-
-  alert(
-    "No matching section found yet. More content will be added to VANTARA."
-  );
-}
-
-
-/* COMING SOON */
-
-function comingSoon() {
-
-  alert(
-    "This section will be available soon on VANTARA EDUCATION."
-  );
-}
-
-
-/* ENTER KEY SEARCH */
-
-document.addEventListener(
-  "keydown",
-  function(event) {
-
-    if (
-      event.key === "Enter" &&
-      document.activeElement.id === "searchInput"
-    ) {
-
-      performSearch();
+        return;
 
     }
 
-  }
+
+    if (!email.includes("@") || !email.includes(".")) {
+
+        alert(
+            "Please enter a valid email address."
+        );
+
+        return;
+
+    }
+
+
+    /*
+      The registration/backend system is not connected yet.
+      Therefore the email is NOT being sent anywhere at this stage.
+    */
+
+    closeWelcome();
+
+}
+
+
+function skipWelcome() {
+
+    closeWelcome();
+
+}
+
+
+function closeWelcome() {
+
+    const screen =
+        document.getElementById("welcomeScreen");
+
+    if (screen) {
+
+        screen.style.opacity = "0";
+
+        screen.style.pointerEvents = "none";
+
+        setTimeout(function() {
+
+            screen.style.display = "none";
+
+        }, 300);
+
+    }
+
+    document.body.style.overflow = "auto";
+
+}
+
+
+/* =====================================================
+   PAGE SYSTEM
+===================================================== */
+
+function showPage(pageName) {
+
+    const pages =
+        document.querySelectorAll(".page");
+
+
+    pages.forEach(function(page) {
+
+        page.classList.remove("active");
+
+    });
+
+
+    const selected =
+        document.getElementById(pageName);
+
+
+    if (selected) {
+
+        selected.classList.add("active");
+
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =====================================================
+   CLASS SELECTION
+===================================================== */
+
+function selectClass(classNumber) {
+
+    const title =
+        document.getElementById("subjectPageTitle");
+
+    if (title) {
+
+        title.innerText =
+            "Class " + classNumber + " — Subjects";
+
+    }
+
+
+    showPage("subjects");
+
+}
+
+
+/* =====================================================
+   COMING SOON
+===================================================== */
+
+function comingSoon(featureName) {
+
+    const title =
+        document.getElementById("noticeTitle");
+
+    const text =
+        document.getElementById("noticeText");
+
+
+    if (title) {
+
+        title.innerText =
+            featureName + " — Coming Soon";
+
+    }
+
+
+    if (text) {
+
+        text.innerText =
+            "This VANTARA feature is currently being developed and will be available soon.";
+
+    }
+
+
+    showPage("noticePage");
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function openSearch() {
+
+    showPage("search");
+
+}
+
+
+function performSearch() {
+
+    const input =
+        document
+        .getElementById("globalSearchInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    const results =
+        document.getElementById("searchResults");
+
+
+    if (!input) {
+
+        results.innerHTML =
+
+        '<div class="notice">' +
+        'Start typing to search VANTARA.' +
+        '</div>';
+
+        return;
+
+    }
+
+
+    const searchItems = [
+
+        {
+            name: "Learning Hub",
+            type: "Learning",
+            page: "learning"
+        },
+
+        {
+            name: "Classes 6–12",
+            type: "Classes",
+            page: "classes"
+        },
+
+        {
+            name: "AI Learning",
+            type: "Skills",
+            page: "ai"
+        },
+
+        {
+            name: "Practice Zone",
+            type: "Practice",
+            page: "practice"
+        },
+
+        {
+            name: "Skill Labs",
+            type: "Skills",
+            page: "skills"
+        },
+
+        {
+            name: "Resource Library",
+            type: "Resources",
+            page: "resources"
+        },
+
+        {
+            name: "Join VANTARA",
+            type: "Community",
+            page: "join"
+        }
+
+    ];
+
+
+    const matches =
+        searchItems.filter(function(item) {
+
+            return (
+                item.name
+                .toLowerCase()
+                .includes(input)
+                ||
+                item.type
+                .toLowerCase()
+                .includes(input)
+            );
+
+        });
+
+
+    if (matches.length === 0) {
+
+        results.innerHTML =
+
+        '<div class="notice">' +
+        'No matching VANTARA section found.' +
+        '</div>';
+
+        return;
+
+    }
+
+
+    results.innerHTML = "";
+
+
+    matches.forEach(function(item) {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "search-result-card";
+
+
+        card.innerHTML =
+
+        "<h3>" +
+        item.name +
+        "</h3>" +
+
+        "<p>" +
+        item.type +
+        "</p>" +
+
+        "<button class='primary-button'>" +
+        "Open" +
+        "</button>";
+
+
+        card.querySelector("button")
+        .onclick = function() {
+
+            showPage(item.page);
+
+        };
+
+
+        results.appendChild(card);
+
+    });
+
+}
+
+
+/* =====================================================
+   JOIN FORM
+===================================================== */
+
+function submitJoin() {
+
+    const name =
+        document.getElementById("joinName")
+        .value
+        .trim();
+
+
+    const selectedClass =
+        document.getElementById("joinClass")
+        .value;
+
+
+    const email =
+        document.getElementById("joinEmail")
+        .value
+        .trim();
+
+
+    const consent =
+        document.getElementById("joinConsent")
+        .checked;
+
+
+    const message =
+        document.getElementById("joinMessage");
+
+
+    if (!name) {
+
+        message.innerText =
+            "Please enter your name.";
+
+        return;
+
+    }
+
+
+    if (!selectedClass) {
+
+        message.innerText =
+            "Please select your class.";
+
+        return;
+
+    }
+
+
+    if (!email || !email.includes("@")) {
+
+        message.innerText =
+            "Please enter a valid email address.";
+
+        return;
+
+    }
+
+
+    if (!consent) {
+
+        message.innerText =
+            "Please agree to receive VANTARA updates.";
+
+        return;
+
+    }
+
+
+    /*
+      IMPORTANT:
+      The backend is not connected yet.
+
+      Therefore this form does NOT claim that
+      the student has been registered or that
+      the email has been saved.
+
+      The backend connection will be added later.
+    */
+
+
+    message.innerText =
+        "Your details are ready. The registration system will be connected soon.";
+
+}
+
+
+/* =====================================================
+   INITIAL STATE
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        /*
+          Welcome screen appears first.
+        */
+
+        document.body.style.overflow = "hidden";
+
+
+        /*
+          Home page is the default page
+          behind the welcome screen.
+        */
+
+        showPage("home");
+
+    }
 );
 
 </script>
 
+
 </body>
+
 </html>
