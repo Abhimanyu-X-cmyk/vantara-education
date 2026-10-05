@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>VANTARA EDUCATION</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -18,11 +23,13 @@ html{
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#f6f8fc;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
   color:#172033;
   line-height:1.6;
 }
+
+/* ================= HEADER ================= */
 
 header{
   background:#111827;
@@ -30,11 +37,12 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  padding:15px 20px;
+  padding:16px 20px;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
 .nav{
-  max-width:1200px;
+  max-width:1250px;
   margin:auto;
   display:flex;
   justify-content:space-between;
@@ -46,94 +54,132 @@ header{
   font-size:21px;
   font-weight:bold;
   letter-spacing:1px;
+  white-space:nowrap;
 }
 
 .nav-links{
   display:flex;
   flex-wrap:wrap;
-  gap:5px;
+  justify-content:center;
+  gap:4px;
 }
 
 .nav-links button{
   background:none;
   border:none;
   color:white;
-  padding:8px 10px;
+  padding:9px 11px;
   cursor:pointer;
   font-size:14px;
+  border-radius:6px;
 }
 
 .nav-links button:hover{
+  background:#1f2937;
   color:#93c5fd;
 }
 
-.hero{
-  background:linear-gradient(135deg,#111827,#2563eb);
-  color:white;
-  text-align:center;
-  padding:90px 20px;
+/* ================= GENERAL ================= */
+
+.page{
+  display:none;
+  min-height:70vh;
 }
 
-.hero h1{
-  font-size:48px;
-  margin-bottom:15px;
-}
-
-.hero p{
-  max-width:750px;
-  margin:auto;
-  font-size:18px;
-}
-
-.button{
-  margin-top:25px;
-  padding:13px 25px;
-  border:none;
-  border-radius:8px;
-  background:white;
-  color:#1d4ed8;
-  font-weight:bold;
-  cursor:pointer;
+.page.active{
+  display:block;
 }
 
 section{
   max-width:1200px;
   margin:auto;
-  padding:60px 20px;
+  padding:65px 20px;
 }
 
 .title{
   text-align:center;
-  font-size:32px;
+  font-size:34px;
   margin-bottom:35px;
 }
 
+.subtitle{
+  text-align:center;
+  max-width:750px;
+  margin:-15px auto 35px;
+  color:#5b6475;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  background:linear-gradient(135deg,#111827,#2563eb);
+  color:white;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.hero h1{
+  font-size:50px;
+  margin-bottom:18px;
+}
+
+.hero p{
+  max-width:760px;
+  margin:auto;
+  font-size:19px;
+}
+
+.main-button{
+  margin-top:30px;
+  padding:14px 27px;
+  border:none;
+  border-radius:9px;
+  background:white;
+  color:#1d4ed8;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.main-button:hover{
+  transform:translateY(-2px);
+}
+
+/* ================= CARDS ================= */
+
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:
+  repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;
 }
 
 .card{
   background:white;
-  padding:25px;
-  border-radius:12px;
+  padding:26px;
+  border-radius:14px;
   box-shadow:0 5px 20px rgba(0,0,0,.07);
   transition:.2s;
 }
 
 .card:hover{
   transform:translateY(-4px);
+  box-shadow:0 8px 25px rgba(0,0,0,.10);
 }
 
 .card h3{
   color:#1d4ed8;
   margin-bottom:10px;
+  font-size:20px;
+}
+
+.card p{
+  color:#4b5563;
 }
 
 .card button{
   width:100%;
-  margin-top:15px;
+  margin-top:18px;
   padding:11px;
   border:none;
   border-radius:7px;
@@ -147,14 +193,14 @@ section{
   background:#1d4ed8;
 }
 
-.page{
-  display:none;
-  min-height:70vh;
+/* ================= ICON ================= */
+
+.icon{
+  font-size:38px;
+  margin-bottom:10px;
 }
 
-.page.active{
-  display:block;
-}
+/* ================= BACK BUTTON ================= */
 
 .back{
   margin-bottom:25px;
@@ -166,48 +212,134 @@ section{
   cursor:pointer;
 }
 
-.class-heading{
+.back:hover{
+  background:#374151;
+}
+
+/* ================= PAGE HEADING ================= */
+
+.page-heading{
   text-align:center;
   color:#1d4ed8;
   font-size:38px;
-  margin-bottom:35px;
+  margin-bottom:12px;
 }
+
+.page-description{
+  text-align:center;
+  max-width:750px;
+  margin:0 auto 35px;
+  color:#5b6475;
+}
+
+/* ================= CLASS ================= */
+
+.class-card{
+  text-align:center;
+}
+
+.class-number{
+  font-size:30px;
+  font-weight:bold;
+  color:#1d4ed8;
+}
+
+/* ================= SUBJECT ================= */
 
 .subject-card{
   text-align:center;
 }
 
-.subject-icon{
-  font-size:35px;
-  margin-bottom:10px;
+/* ================= JOIN ================= */
+
+.join-box{
+  background:#eaf1ff;
+  border-radius:16px;
+  padding:55px 25px;
+  text-align:center;
 }
+
+.join-box h2{
+  margin-bottom:15px;
+}
+
+/* ================= NOTICE ================= */
+
+.notice{
+  background:#fff;
+  border-left:5px solid #2563eb;
+  padding:20px;
+  margin-bottom:25px;
+  border-radius:8px;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
   background:#111827;
   color:white;
   text-align:center;
-  padding:30px 20px;
+  padding:32px 20px;
 }
 
+footer p{
+  margin:5px;
+}
+
+/* ================= MOBILE ================= */
+
 @media(max-width:700px){
+
+  header{
+    padding:14px 10px;
+  }
 
   .nav{
     flex-direction:column;
   }
 
   .nav-links{
-    justify-content:center;
+    width:100%;
+  }
+
+  .nav-links button{
+    font-size:13px;
+    padding:8px;
+  }
+
+  .hero{
+    padding:75px 20px;
   }
 
   .hero h1{
-    font-size:36px;
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .title{
+    font-size:29px;
+  }
+
+  .page-heading{
+    font-size:31px;
   }
 
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- ================================================= -->
+<!-- HEADER -->
+<!-- ================================================= -->
 
 <header>
 
@@ -231,8 +363,20 @@ Learning
 Classes
 </button>
 
+<button onclick="showPage('ai')">
+AI & Digital
+</button>
+
+<button onclick="showPage('practice')">
+Practice
+</button>
+
+<button onclick="showPage('skills')">
+Skill Labs
+</button>
+
 <button onclick="showPage('join')">
-Join VANTARA
+Join
 </button>
 
 </div>
@@ -242,26 +386,35 @@ Join VANTARA
 </header>
 
 
+
+<!-- ================================================= -->
 <!-- HOME -->
+<!-- ================================================= -->
 
 <div id="home" class="page active">
 
 <section class="hero">
 
-<h1>VANTARA EDUCATION</h1>
+<h1>
+VANTARA EDUCATION
+</h1>
 
 <p>
 Learn. Explore. Build. Achieve.
-A learning platform for students to develop
-knowledge, skills, creativity and confidence.
+A learning platform designed to help students
+develop knowledge, skills, creativity and confidence.
 </p>
 
-<button class="button"
+<button
+class="main-button"
 onclick="showPage('classes')">
+
 Explore Classes
+
 </button>
 
 </section>
+
 
 <section>
 
@@ -269,39 +422,97 @@ Explore Classes
 Learning at VANTARA
 </h2>
 
+<p class="subtitle">
+Explore different learning opportunities available
+through VANTARA EDUCATION.
+</p>
+
+
 <div class="cards">
 
-<div class="card">
-<h3>📚 Learning Hub</h3>
-<p>
-Structured learning resources designed to help
-students understand concepts clearly.
-</p>
-</div>
 
 <div class="card">
-<h3>🤖 AI & Digital Skills</h3>
+
+<div class="icon">📚</div>
+
+<h3>
+Learning Hub
+</h3>
+
 <p>
-Explore modern technology, AI and useful
-digital skills.
+Structured learning resources and concept-based
+learning for students.
 </p>
+
+<button onclick="showPage('learning')">
+Open Learning Hub
+</button>
+
 </div>
 
-<div class="card">
-<h3>📝 Practice Zone</h3>
-<p>
-Practice questions and activities to strengthen
-learning.
-</p>
-</div>
+
 
 <div class="card">
-<h3>🛠️ Skill Labs</h3>
+
+<div class="icon">🤖</div>
+
+<h3>
+AI & Digital Skills
+</h3>
+
 <p>
-Learn through activities, projects and practical
-exploration.
+Explore artificial intelligence, technology and
+important digital skills.
 </p>
+
+<button onclick="showPage('ai')">
+Open AI & Digital
+</button>
+
 </div>
+
+
+
+<div class="card">
+
+<div class="icon">📝</div>
+
+<h3>
+Practice Zone
+</h3>
+
+<p>
+Strengthen your learning through practice,
+questions and activities.
+</p>
+
+<button onclick="showPage('practice')">
+Open Practice Zone
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">🛠️</div>
+
+<h3>
+Skill Labs
+</h3>
+
+<p>
+Develop practical skills through activities,
+projects and exploration.
+</p>
+
+<button onclick="showPage('skills')">
+Open Skill Labs
+</button>
+
+</div>
+
 
 </div>
 
@@ -310,37 +521,118 @@ exploration.
 </div>
 
 
-<!-- LEARNING -->
+
+<!-- ================================================= -->
+<!-- LEARNING HUB -->
+<!-- ================================================= -->
 
 <div id="learning" class="page">
 
 <section>
 
-<h2 class="title">
+<button
+class="back"
+onclick="showPage('home')">
+
+← Back to Home
+
+</button>
+
+
+<h2 class="page-heading">
 Learning Hub
 </h2>
 
+<p class="page-description">
+A central place for concept learning, study resources
+and academic development.
+</p>
+
+
 <div class="cards">
 
-<div class="card">
-<h3>📖 Concept Learning</h3>
-<p>Understand concepts step by step.</p>
-</div>
 
 <div class="card">
-<h3>📝 Practice</h3>
-<p>Strengthen your understanding through practice.</p>
+
+<div class="icon">📖</div>
+
+<h3>
+Concept Learning
+</h3>
+
+<p>
+Understand concepts clearly through structured
+explanations and examples.
+</p>
+
+<button onclick="comingSoon()">
+Explore Concepts
+</button>
+
 </div>
 
-<div class="card">
-<h3>💡 Projects</h3>
-<p>Turn ideas into practical projects.</p>
-</div>
+
 
 <div class="card">
-<h3>🚀 Skills</h3>
-<p>Develop useful skills for the future.</p>
+
+<div class="icon">📚</div>
+
+<h3>
+Study Resources
+</h3>
+
+<p>
+Notes, reference materials and learning resources.
+</p>
+
+<button onclick="comingSoon()">
+Explore Resources
+</button>
+
 </div>
+
+
+
+<div class="card">
+
+<div class="icon">💡</div>
+
+<h3>
+Learning Activities
+</h3>
+
+<p>
+Interactive activities designed to make learning
+more meaningful.
+</p>
+
+<button onclick="comingSoon()">
+Explore Activities
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">🎯</div>
+
+<h3>
+Learning Goals
+</h3>
+
+<p>
+Develop strong understanding and consistent
+learning habits.
+</p>
+
+<button onclick="comingSoon()">
+Explore Goals
+</button>
+
+</div>
+
 
 </div>
 
@@ -349,59 +641,179 @@ Learning Hub
 </div>
 
 
+
+<!-- ================================================= -->
 <!-- CLASSES -->
+<!-- ================================================= -->
 
 <div id="classes" class="page">
 
 <section>
 
-<h2 class="title">
+<h2 class="page-heading">
 Classes 6–12
 </h2>
 
+<p class="page-description">
+Choose your class to explore subjects and learning resources.
+</p>
+
+
 <div class="cards">
 
-<div class="card">
-<h3>Class 6</h3>
-<p>Explore Class 6 resources.</p>
-<button onclick="openClass(6)">Open Class 6</button>
+
+<div class="card class-card">
+
+<div class="class-number">
+6
 </div>
 
-<div class="card">
-<h3>Class 7</h3>
-<p>Explore Class 7 resources.</p>
-<button onclick="openClass(7)">Open Class 7</button>
+<h3>
+Class 6
+</h3>
+
+<p>
+Explore Class 6 learning.
+</p>
+
+<button onclick="openClass(6)">
+Open Class 6
+</button>
+
 </div>
 
-<div class="card">
-<h3>Class 8</h3>
-<p>Explore Class 8 resources.</p>
-<button onclick="openClass(8)">Open Class 8</button>
+
+
+<div class="card class-card">
+
+<div class="class-number">
+7
 </div>
 
-<div class="card">
-<h3>Class 9</h3>
-<p>Explore Class 9 resources.</p>
-<button onclick="openClass(9)">Open Class 9</button>
+<h3>
+Class 7
+</h3>
+
+<p>
+Explore Class 7 learning.
+</p>
+
+<button onclick="openClass(7)">
+Open Class 7
+</button>
+
 </div>
 
-<div class="card">
-<h3>Class 10</h3>
-<p>Explore Class 10 resources.</p>
-<button onclick="openClass(10)">Open Class 10</button>
+
+
+<div class="card class-card">
+
+<div class="class-number">
+8
 </div>
 
-<div class="card">
-<h3>Class 11</h3>
-<p>Explore Class 11 resources.</p>
-<button onclick="openClass(11)">Open Class 11</button>
+<h3>
+Class 8
+</h3>
+
+<p>
+Explore Class 8 learning.
+</p>
+
+<button onclick="openClass(8)">
+Open Class 8
+</button>
+
 </div>
 
-<div class="card">
-<h3>Class 12</h3>
-<p>Explore Class 12 resources.</p>
-<button onclick="openClass(12)">Open Class 12</button>
+
+
+<div class="card class-card">
+
+<div class="class-number">
+9
 </div>
+
+<h3>
+Class 9
+</h3>
+
+<p>
+Explore Class 9 learning.
+</p>
+
+<button onclick="openClass(9)">
+Open Class 9
+</button>
+
+</div>
+
+
+
+<div class="card class-card">
+
+<div class="class-number">
+10
+</div>
+
+<h3>
+Class 10
+</h3>
+
+<p>
+Explore Class 10 learning.
+</p>
+
+<button onclick="openClass(10)">
+Open Class 10
+</button>
+
+</div>
+
+
+
+<div class="card class-card">
+
+<div class="class-number">
+11
+</div>
+
+<h3>
+Class 11
+</h3>
+
+<p>
+Explore Class 11 learning.
+</p>
+
+<button onclick="openClass(11)">
+Open Class 11
+</button>
+
+</div>
+
+
+
+<div class="card class-card">
+
+<div class="class-number">
+12
+</div>
+
+<h3>
+Class 12
+</h3>
+
+<p>
+Explore Class 12 learning.
+</p>
+
+<button onclick="openClass(12)">
+Open Class 12
+</button>
+
+</div>
+
 
 </div>
 
@@ -410,76 +822,175 @@ Classes 6–12
 </div>
 
 
+
+<!-- ================================================= -->
 <!-- SUBJECTS -->
+<!-- ================================================= -->
 
 <div id="subjects" class="page">
 
 <section>
 
-<button class="back"
+<button
+class="back"
 onclick="showPage('classes')">
+
 ← Back to Classes
+
 </button>
 
-<h2 id="classHeading" class="class-heading">
+
+<h2 id="classHeading"
+class="page-heading">
+
 Class
+
 </h2>
+
+<p class="page-description">
+Choose a subject.
+</p>
+
 
 <div class="cards">
 
+
 <div class="card subject-card">
-<div class="subject-icon">📐</div>
-<h3>Mathematics</h3>
-<p>Chapters, notes and practice.</p>
-<button onclick="openSubject('Mathematics')">
+
+<div class="icon">📐</div>
+
+<h3>
+Mathematics
+</h3>
+
+<p>
+Mathematics chapters, notes and practice.
+</p>
+
+<button
+onclick="openSubject('Mathematics')">
+
 Open Mathematics
+
 </button>
+
 </div>
 
+
+
 <div class="card subject-card">
-<div class="subject-icon">🔬</div>
-<h3>Science</h3>
-<p>Science concepts and resources.</p>
-<button onclick="openSubject('Science')">
+
+<div class="icon">🔬</div>
+
+<h3>
+Science
+</h3>
+
+<p>
+Science concepts, notes and activities.
+</p>
+
+<button
+onclick="openSubject('Science')">
+
 Open Science
+
 </button>
+
 </div>
 
+
+
 <div class="card subject-card">
-<div class="subject-icon">🌍</div>
-<h3>Social Science</h3>
-<p>History, Geography, Civics and Economics.</p>
-<button onclick="openSubject('Social Science')">
+
+<div class="icon">🌍</div>
+
+<h3>
+Social Science
+</h3>
+
+<p>
+History, Geography, Civics and Economics.
+</p>
+
+<button
+onclick="openSubject('Social Science')">
+
 Open Social Science
+
 </button>
+
 </div>
 
+
+
 <div class="card subject-card">
-<div class="subject-icon">📚</div>
-<h3>English</h3>
-<p>Literature, grammar and language skills.</p>
-<button onclick="openSubject('English')">
+
+<div class="icon">📚</div>
+
+<h3>
+English
+</h3>
+
+<p>
+English grammar, literature and language.
+</p>
+
+<button
+onclick="openSubject('English')">
+
 Open English
+
 </button>
+
 </div>
 
+
+
 <div class="card subject-card">
-<div class="subject-icon">🪔</div>
-<h3>Hindi</h3>
-<p>Hindi language and literature resources.</p>
-<button onclick="openSubject('Hindi')">
+
+<div class="icon">🪔</div>
+
+<h3>
+Hindi
+</h3>
+
+<p>
+Hindi language and literature.
+</p>
+
+<button
+onclick="openSubject('Hindi')">
+
 Open Hindi
+
 </button>
+
 </div>
 
+
+
 <div class="card subject-card">
-<div class="subject-icon">💻</div>
-<h3>Computer</h3>
-<p>Computer and digital learning.</p>
-<button onclick="openSubject('Computer')">
+
+<div class="icon">💻</div>
+
+<h3>
+Computer
+</h3>
+
+<p>
+Computer science and digital learning.
+</p>
+
+<button
+onclick="openSubject('Computer')">
+
 Open Computer
+
 </button>
+
 </div>
+
 
 </div>
 
@@ -488,62 +999,117 @@ Open Computer
 </div>
 
 
+
+<!-- ================================================= -->
 <!-- SUBJECT PAGE -->
+<!-- ================================================= -->
 
 <div id="subjectPage" class="page">
 
 <section>
 
-<button class="back"
+<button
+class="back"
 onclick="showPage('subjects')">
+
 ← Back to Subjects
+
 </button>
 
-<h2 id="subjectHeading" class="class-heading">
+
+<h2 id="subjectHeading"
+class="page-heading">
+
 Subject
+
 </h2>
+
+<p class="page-description">
+Explore the available learning sections.
+</p>
+
 
 <div class="cards">
 
+
 <div class="card">
-<h3>📖 Chapters</h3>
+
+<div class="icon">📖</div>
+
+<h3>
+Chapters
+</h3>
+
 <p>
-Chapter-wise learning content will be added here.
+Chapter-wise learning content.
 </p>
+
 <button onclick="comingSoon()">
 Open Chapters
 </button>
+
 </div>
 
+
+
 <div class="card">
-<h3>📝 Notes</h3>
+
+<div class="icon">📝</div>
+
+<h3>
+Notes
+</h3>
+
 <p>
-Detailed notes and explanations will be available here.
+Detailed notes and explanations.
 </p>
+
 <button onclick="comingSoon()">
 Open Notes
 </button>
+
 </div>
 
+
+
 <div class="card">
-<h3>✏️ Practice</h3>
+
+<div class="icon">✏️</div>
+
+<h3>
+Practice
+</h3>
+
 <p>
-Practice questions will be added here.
+Practice questions and exercises.
 </p>
+
 <button onclick="comingSoon()">
 Open Practice
 </button>
+
 </div>
 
+
+
 <div class="card">
-<h3>📂 Resources</h3>
+
+<div class="icon">📂</div>
+
+<h3>
+Resources
+</h3>
+
 <p>
-Study resources and useful materials will be added here.
+Useful study resources and materials.
 </p>
+
 <button onclick="comingSoon()">
 Open Resources
 </button>
+
 </div>
+
 
 </div>
 
@@ -552,13 +1118,364 @@ Open Resources
 </div>
 
 
+
+<!-- ================================================= -->
+<!-- AI & DIGITAL SKILLS -->
+<!-- ================================================= -->
+
+<div id="ai" class="page">
+
+<section>
+
+<button
+class="back"
+onclick="showPage('home')">
+
+← Back to Home
+
+</button>
+
+
+<h2 class="page-heading">
+AI & Digital Skills
+</h2>
+
+<p class="page-description">
+Explore modern technology and develop useful digital skills.
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">🤖</div>
+
+<h3>
+Artificial Intelligence
+</h3>
+
+<p>
+Understand the basics of AI and how it is used.
+</p>
+
+<button onclick="comingSoon()">
+Explore AI
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">💻</div>
+
+<h3>
+Digital Skills
+</h3>
+
+<p>
+Develop important skills for the digital world.
+</p>
+
+<button onclick="comingSoon()">
+Explore Digital Skills
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">🧠</div>
+
+<h3>
+AI Learning Tools
+</h3>
+
+<p>
+Discover useful AI-powered learning tools.
+</p>
+
+<button onclick="comingSoon()">
+Explore Tools
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">🔐</div>
+
+<h3>
+Digital Awareness
+</h3>
+
+<p>
+Learn responsible and safe use of digital technology.
+</p>
+
+<button onclick="comingSoon()">
+Explore
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- PRACTICE -->
+<!-- ================================================= -->
+
+<div id="practice" class="page">
+
+<section>
+
+<button
+class="back"
+onclick="showPage('home')">
+
+← Back to Home
+
+</button>
+
+
+<h2 class="page-heading">
+Practice Zone
+</h2>
+
+<p class="page-description">
+Practice, revise and strengthen your understanding.
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">📝</div>
+
+<h3>
+Practice Questions
+</h3>
+
+<p>
+Subject-wise practice questions.
+</p>
+
+<button onclick="comingSoon()">
+Start Practice
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">🎯</div>
+
+<h3>
+Topic Practice
+</h3>
+
+<p>
+Practice individual topics and concepts.
+</p>
+
+<button onclick="comingSoon()">
+Explore Topics
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">🏆</div>
+
+<h3>
+Challenges
+</h3>
+
+<p>
+Challenge yourself with interesting problems.
+</p>
+
+<button onclick="comingSoon()">
+Explore Challenges
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">🔄</div>
+
+<h3>
+Revision
+</h3>
+
+<p>
+Revise important concepts before examinations.
+</p>
+
+<button onclick="comingSoon()">
+Start Revision
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- SKILL LABS -->
+<!-- ================================================= -->
+
+<div id="skills" class="page">
+
+<section>
+
+<button
+class="back"
+onclick="showPage('home')">
+
+← Back to Home
+
+</button>
+
+
+<h2 class="page-heading">
+Skill Labs
+</h2>
+
+<p class="page-description">
+Learn by creating, exploring and doing.
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">🛠️</div>
+
+<h3>
+Projects
+</h3>
+
+<p>
+Build practical projects and turn ideas into reality.
+</p>
+
+<button onclick="comingSoon()">
+Explore Projects
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">💡</div>
+
+<h3>
+Innovation
+</h3>
+
+<p>
+Explore ideas and develop creative solutions.
+</p>
+
+<button onclick="comingSoon()">
+Explore Innovation
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">🔬</div>
+
+<h3>
+Experiments
+</h3>
+
+<p>
+Learn through practical exploration.
+</p>
+
+<button onclick="comingSoon()">
+Explore Experiments
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">🎨</div>
+
+<h3>
+Creative Skills
+</h3>
+
+<p>
+Develop creativity and practical abilities.
+</p>
+
+<button onclick="comingSoon()">
+Explore Skills
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- ================================================= -->
 <!-- JOIN -->
+<!-- ================================================= -->
 
 <div id="join" class="page">
 
 <section>
 
-<div class="card" style="text-align:center;padding:50px">
+<div class="join-box">
 
 <h2 class="title">
 Join VANTARA
@@ -570,12 +1487,15 @@ VANTARA EDUCATION is currently free for students.
 
 <p style="margin-top:10px">
 Registration and email updates will be connected
-to the VANTARA system later.
+to the VANTARA system in the next stage.
 </p>
 
-<button class="button"
+<button
+class="main-button"
 onclick="comingSoon()">
-Register
+
+Register for VANTARA
+
 </button>
 
 </div>
@@ -585,14 +1505,28 @@ Register
 </div>
 
 
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
 <footer>
 
-<p>© 2026 VANTARA EDUCATION</p>
+<p>
+© 2026 VANTARA EDUCATION
+</p>
 
-<p>Learn. Explore. Build. Achieve.</p>
+<p>
+Learn. Explore. Build. Achieve.
+</p>
 
 </footer>
 
+
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
 
 <script>
 
@@ -610,14 +1544,17 @@ page.classList.remove("active");
 
 });
 
-const page =
+
+const selectedPage =
 document.getElementById(pageId);
 
-if(page){
 
-page.classList.add("active");
+if(selectedPage){
+
+selectedPage.classList.add("active");
 
 }
+
 
 window.scrollTo({
 top:0,
@@ -631,8 +1568,12 @@ function openClass(classNumber){
 
 selectedClass = classNumber;
 
-document.getElementById("classHeading").textContent =
+
+document.getElementById(
+"classHeading"
+).textContent =
 "Class " + classNumber;
+
 
 showPage("subjects");
 
@@ -641,8 +1582,14 @@ showPage("subjects");
 
 function openSubject(subject){
 
-document.getElementById("subjectHeading").textContent =
-"Class " + selectedClass + " — " + subject;
+document.getElementById(
+"subjectHeading"
+).textContent =
+"Class " +
+selectedClass +
+" — " +
+subject;
+
 
 showPage("subjectPage");
 
@@ -659,5 +1606,7 @@ alert(
 
 </script>
 
+
 </body>
+
 </html>
